@@ -1,5 +1,5 @@
 # Sparse GNN Accelerator 
-This repository implements FASE (Format-Adaptive Sparse Engine), a high-performance C++ accelerator for sparse matrix operations targeting Graph Neural Network (GNN) inference. It dynamically chooses between multiple sparse matrix formats (CSR, ELL, BCSR) based on sparsity patterns to maximize execution efficiency.
+Format-Adaptive Sparse Engine (FASE): a high-performance C++ CPU accelerator for sparse matrix-matrix multiplication. Features dynamic sparse region detection, hybrid format execution (HYB), custom work-stealing scheduler, and cache-blocked SpMM for sparse GNN inference.
 
 ## Repository Structure
 
