@@ -93,6 +93,28 @@ A high-performance C++ CPU accelerator for sparse matrix-matrix multiplication. 
 
 ---
 
+## FASE Side Quest: Heterogeneous & Vector-Acceleration on CPU (Days 86–100)
+
+| Day  | Task |
+|:----|:-----|
+| 86  | **SYCL/oneAPI Prototype**: Port your CSR SpMM kernel to SYCL (Intel DPC++) targeting the HOST device, so it runs on CPU cores using the same code path you’d use for GPU. |
+| 87  | **SYCL ELL/Hybrid**: Port ELL and Hybrid SpMM kernels to SYCL, ensuring coalesced memory access on the HOST device. |
+| 88  | **SYCL Performance Analysis**: Compare the SYCL-host versions vs. your OpenMP kernels; collect timings and pinpoint bottlenecks. |
+| 89  | **ISPC Implementation**: Write an ISPC version of CSR SpMM leveraging SPMD vector lanes, compile & run on CPU. |
+| 90  | **ISPC ELL/Hybrid**: Extend ISPC to ELL and Hybrid SpMM, using `programCount` and `programIndex` for lane-divergent rows. |
+| 91  | **Vector‐Extension Exploration**: If you can target AVX-512 on your machine, compile ISPC with AVX-512 and measure vectorization gains. |
+| 92  | **Embedded‐DSP Emulation**: Use LLVM’s RISC-V vector backend or QEMU to simulate your SpMM kernels on a RISC-V vector CPU. |
+| 93  | **OneAPI Auto-Tuner**: Integrate a SYCL-based auto-tuner that picks work-group sizes and tile dimensions at runtime on the HOST device. |
+| 94  | **Parallel Patterns**: Implement a SYCL version using hierarchical parallelism (`nd_range`, `group`, `sub_group`) on CPU. |
+| 95  | **Cache-Affinity Tuning**: Use Linux `numactl` and thread affinity to pin your SYCL/ISPC threads—measure NUMA effects. |
+| 96  | **SIMD Intrinsics**: Write an AVX2/AVX-512 intrinsic version of your Hybrid SpMM inner loops in C++; compare against ISPC. |
+| 97  | **Memory Pool for SYCL**: Implement a custom SYCL USM allocator that uses a pre-allocated host buffer to back your sparse structures. |
+| 98  | **Benchmark Suite Extension**: Add SYCL and ISPC variants to your benchmark harness and generate unified comparison charts. |
+| 99  | **Research Write-Up**: Draft a 2-page brief comparing OpenMP vs. SYCL vs. ISPC on CPU, highlighting portability and performance. |
+| 100 | **Release & Presentation**: Tag `v1.0-cpu-hetero`, update README with all CPU-heterogeneous results, and prepare a 5-slide demo. |
+
+---
+
 ### **Key Features:**
 1. **AVX2 Optimization**: Boost kernel performance by vectorizing the inner loops for all sparse formats (CSR, ELL, Hybrid).
 2. **Tiled SpMM with AVX2**: Implement advanced cache-blocking techniques with multi-level tiling, optimized for AVX2.
@@ -102,8 +124,7 @@ A high-performance C++ CPU accelerator for sparse matrix-matrix multiplication. 
 
 ---
 
-### 🗂 Folder Structure
-As the project grows, ensure the folder structure supports new features and optimizations:
+### Folder Structure
 
 ```bash
 src/
