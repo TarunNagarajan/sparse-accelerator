@@ -1,5 +1,5 @@
 # Sparse GNN Inference Accelerator Engine 
-A high-performance C++ CPU accelerator for sparse matrix-matrix multiplication. Features dynamic sparse region detection, hybrid format execution (HYB), custom work-stealing scheduler, and cache-blocked SpMM for sparse GNN inference.
+A high-performance C++ accelerator for sparse matrix-matrix multiplication. Features dynamic sparse region detection, hybrid format execution (HYB), custom work-stealing scheduler, and cache-blocked SpMM for sparse GNN inference.
 
 ## Planner
 
