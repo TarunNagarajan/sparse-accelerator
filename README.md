@@ -53,7 +53,7 @@ A high-performance C++ accelerator for sparse matrix-matrix multiplication. Feat
 | 46 | Define and implement `bcsr_matrix.hpp` for block CSR. |
 | 47 | Implement single-threaded BCSR SpMM in `spmm_bcsr.hpp`. |
 | 48 | Parallelize BCSR SpMM with OpenMP. |
-| 49 | Profile BCSR vs other formats. |
+| 49 | Profile BCSR vs other formats. | 
 | 50 | Implement tiled BCSR in `tiled_spmm.hpp`. |
 | 51 | Profile tiled BCSR vs non-tiled. |
 | 52 | Refactor to expose unified `SpMMExecutor` API. |
